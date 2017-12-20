@@ -1,4 +1,4 @@
-package com.juliette.api.shell;
+package com.juliette.api.operation;
 
 
 import com.jcraft.jsch.ChannelExec;
@@ -15,6 +15,7 @@ public class Shell {
     public static void main(String args[]) {
 
         StringBuffer output =  new StringBuffer();
+
         try {
 
             JSch jsch = new JSch();
@@ -30,7 +31,7 @@ public class Shell {
             String command = "ls -ltr";
 
             ChannelExec exec = (ChannelExec)session.openChannel("exec");
-             exec.setCommand(command);
+            exec.setCommand(command);
             exec.connect();
 
             BufferedReader readerRemote = new BufferedReader(new InputStreamReader(exec.getInputStream()));
@@ -43,8 +44,6 @@ public class Shell {
 
             exec.disconnect();
             session.disconnect();
-
-
 
 
             Process process =  Runtime.getRuntime().exec("ls -ltr");
