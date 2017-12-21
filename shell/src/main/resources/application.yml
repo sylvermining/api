@@ -1,0 +1,8 @@
+server:
+  port: 8080
+microserver:
+  backup:
+    user: ubuntu
+    host: 54.198.241.46
+    port: 22
+    path: c:\\key\\backup.pem
